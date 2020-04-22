@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+        xsi:schemaLocation="http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/mvc"
+        xmlns:mvc="http://www.springframework.org/schema/mvc">
+    <mvc:default-servlet-handler/>
+    <annotation-driven/>
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property value="/WEB-INF/view" name="prefix"/>
+        <beans:property value=".jsp" name="suffix"/>
+    </beans:bean>
+    <beans:bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+        <beans:property value="org.postgresql.Driver" name="driverClassName"/>
+        <beans:property value="jdbc:postgresql://localhost:5432/Insurance_company" name="url"/>
+        <beans:property value="postgres" name="username"/>
+        <beans:property value="NGTU17" name="password"/>
+    </beans:bean>
+    <beans:bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+                id="hibernate4AnnotatedSessionFactory">
+        <beans:property name="dataSource" ref="dataSource"/>
+        <beans:property name="annotatedClasses">
+            <beans:list>
+                <beans:value>com.insurant.model.Insurant</beans:value>
+                <beans:value>com.beneficiary.model.Beneficiary</beans:value>
+                <beans:value>com.agent.model.Insurance_agent</beans:value>
+                <beans:value>com.payment.model.Insurance_payment</beans:value>
+                <beans:value>com.policy.model.Insuranсе_policy</beans:value>
+            </beans:list>
+        </beans:property>
+        <beans:property name="hibernateProperties">
+            <beans:props>
+                <beans:prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</beans:prop>
+                <beans:prop key="connection.driver_class">org.postgresql.Driver</beans:prop>
+                <beans:prop key="connection.url">jdbc:postgresql://localhost:5432/Insurance_company</beans:prop>
+                <beans:prop key="hibernate.show_sql">true</beans:prop>
+                <beans:prop key="generateDdl">true</beans:prop>
+                <beans:prop key="hbm2ddl.auto">update</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+    <beans:bean class="com.insurant.dao.InsurantDao" id="insurantDAO">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.beneficiary.dao.BeneficiaryDao" id="beneficiaryDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.agent.dao.AgentDao" id="agentDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.payment.dao.PaymentDao" id="paymentDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.policy.dao.PolicyDao" id="policyDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.insurant.service.InsurantService" id="insurantService">
+        <beans:property name="insurantDAO" ref="insurantDAO"/>
+    </beans:bean>
+    <beans:bean class="com.beneficiary.service.BeneficiaryService" id="beneficiaryService">
+        <beans:property name="beneficiaryDAO" ref="beneficiaryDao"/>
+    </beans:bean>
+    <beans:bean class="com.agent.service.AgentService" id="agentService">
+        <beans:property name="agentDAO" ref="agentDao"/>
+    </beans:bean>
+    <beans:bean class="com.payment.service.PaymentService" id="paymentService">
+        <beans:property name="paymentDAO" ref="paymentDao"/>
+    </beans:bean>
+    <beans:bean class="com.policy.service.PolicyService" id="policyService">
+        <beans:property name="policyDAO" ref="policyDao"/>
+    </beans:bean>
+    <context:component-scan base-package="com"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <beans:bean class="org.springframework.orm.hibernate4.HibernateTransactionManager" id="transactionManager">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+</beans:beans>
+
