@@ -16,8 +16,8 @@ public class CRUD {
         SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         read(session);
-        //create(session);
-        //read(session);
+        create(session);
+        read(session);
         /*readID(session, BigInteger.valueOf(2));
         update(session, BigInteger.valueOf(1), "Носик", "Владимир", "Алексеевич", "+7 (908) 876-91-82", "NosikVA@yandex.ru");
         read(session);

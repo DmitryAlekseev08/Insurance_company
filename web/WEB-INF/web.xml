@@ -24,9 +24,17 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>imageServlet</servlet-name>
+        <servlet-class>AddImages</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>imageServlet</servlet-name>
+        <url-pattern>/image</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/WEB-INF/view/insurant.jsp</welcome-file>
+        <welcome-file>/WEB-INF/view/main_page.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>

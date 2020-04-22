@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Iterator;
+import java.math.BigInteger;
 import java.util.List;
 
 // Реализация бизнес-логики
@@ -20,21 +20,21 @@ public class InsurantService {
     }
 
     @Transactional
-    public List<Insurant> filter()
-    {
-        List<Insurant> insurantList = this.insurantDAO.listInsurant();
-        // Фильтр отсеивает записи, которые начинаются с гласной буквы
-        Iterator<Insurant> insurantIterator = insurantList.iterator(); // Создаю итератор
-        while(insurantIterator.hasNext()) { // До тех пор, пока в списке есть элементы
-
-            Insurant nextInsurant = insurantIterator.next();
-            if (nextInsurant.getLastName().matches("^(?i:[aeiouy]).*")) {
-                insurantIterator.remove();
-            }
-        }
-        return insurantList;
-    };
+    public List<Insurant> listInsurant() { return this.insurantDAO.listInsurant(); }
 
     @Transactional
-    public List<Insurant> listInsurant() { return this.insurantDAO.listInsurant(); }
+    public void addInsurant(Insurant insurant) {
+        this.insurantDAO.addInsurant(insurant);
+    }
+
+    @Transactional
+    public void updateInsurant(Insurant insurant) { this.insurantDAO.updateInsurant(insurant); }
+
+    @Transactional
+    public void removeInsurant(BigInteger id) {
+        this.insurantDAO.removeInsurant(id);
+    }
+
+    @Transactional
+    public Insurant getInsurantId(BigInteger id) { return this.insurantDAO.getInsurantId(id); }
 }

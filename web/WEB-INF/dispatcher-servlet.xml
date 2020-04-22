@@ -32,6 +32,10 @@
         <beans:property name="annotatedClasses">
             <beans:list>
                 <beans:value>com.insurant.model.Insurant</beans:value>
+                <beans:value>com.beneficiary.model.Beneficiary</beans:value>
+                <beans:value>com.agent.model.Insurance_agent</beans:value>
+                <beans:value>com.payment.model.Insurance_payment</beans:value>
+                <beans:value>com.policy.model.Insuranсе_policy</beans:value>
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">
@@ -48,8 +52,32 @@
     <beans:bean class="com.insurant.dao.InsurantDao" id="insurantDAO">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </beans:bean>
+    <beans:bean class="com.beneficiary.dao.BeneficiaryDao" id="beneficiaryDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.agent.dao.AgentDao" id="agentDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.payment.dao.PaymentDao" id="paymentDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
+    <beans:bean class="com.policy.dao.PolicyDao" id="policyDao">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </beans:bean>
     <beans:bean class="com.insurant.service.InsurantService" id="insurantService">
         <beans:property name="insurantDAO" ref="insurantDAO"/>
+    </beans:bean>
+    <beans:bean class="com.beneficiary.service.BeneficiaryService" id="beneficiaryService">
+        <beans:property name="beneficiaryDAO" ref="beneficiaryDao"/>
+    </beans:bean>
+    <beans:bean class="com.agent.service.AgentService" id="agentService">
+        <beans:property name="agentDAO" ref="agentDao"/>
+    </beans:bean>
+    <beans:bean class="com.payment.service.PaymentService" id="paymentService">
+        <beans:property name="paymentDAO" ref="paymentDao"/>
+    </beans:bean>
+    <beans:bean class="com.policy.service.PolicyService" id="policyService">
+        <beans:property name="policyDAO" ref="policyDao"/>
     </beans:bean>
     <context:component-scan base-package="com"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>

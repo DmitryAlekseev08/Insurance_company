@@ -1,4 +1,4 @@
-package com.insurant.model;
+package com.beneficiary.model;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -6,16 +6,16 @@ import java.util.Objects;
 
 @Entity
 @Embeddable
-// Таблица "insurants"
-@Table(name = "insurants")
-public class Insurant {
+// Таблица "beneficiaries"
+@Table(name = "beneficiaries")
+public class Beneficiary {
     // Поля класса(столбцы таблицы)
     @Id
-    @Column(name = "id", unique = true, nullable = false)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="insurants_seq")
-    @SequenceGenerator(name="insurants_seq", sequenceName="insurants_id_seq", allocationSize=10)
-    private BigInteger insurantId;
-    @Column(name = "last_name", unique = true, nullable = false)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "beneficiaries_seq")
+    @SequenceGenerator(name = "beneficiaries_seq", sequenceName = "beneficiaries_id_seq", allocationSize = 10)
+    private BigInteger beneficiaryId;
+    @Column(name = "last_name")
     private String lastName;
     @Column(name = "first_name")
     private String firstName;
@@ -27,10 +27,12 @@ public class Insurant {
     private String email;
 
     // Методы класса
-    public BigInteger getInsurantId() {
-        return insurantId;
+    public BigInteger getBeneficiaryId() {
+        return beneficiaryId;
     }
-    public void setInsurantId(BigInteger insurantId) { this.insurantId = insurantId; }
+    public void setBeneficiaryId(BigInteger beneficiaryId) {
+        this.beneficiaryId = beneficiaryId;
+    }
 
     public String getLastName() {
         return lastName;
@@ -60,21 +62,21 @@ public class Insurant {
     public void setEmail(String email) { this.email = email; }
 
     // Конструктор класса
-    public Insurant(String LastName, String FirstName, String MiddleName, String Phone, String Email) {
-        this.lastName = LastName;
-        this.firstName = FirstName;
-        this.middleName = MiddleName;
-        this.phone = Phone;
-        this.email = Email;
+    public Beneficiary(String lastName, String firstName, String middleName, String phone, String email) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.phone = phone;
+        this.email = email;
     }
-    public Insurant() {
+    public Beneficiary() {
     }
 
     // Метод, возвращающий запись из таблицы
     @Override
     public String toString() {
-        return "Insurant{" +
-                "IdInsurant =" + insurantId +
+        return "Beneficiary{" +
+                "IdBeneficiary =" + beneficiaryId +
                 ", LastName ='" + lastName + '\'' +
                 ", FirstName ='" + firstName + '\'' +
                 ", MiddleName ='" + middleName + '\'' +
@@ -87,14 +89,14 @@ public class Insurant {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Insurant)) return false;
-        Insurant insurant = (Insurant) o;
-        return Objects.equals(getInsurantId(), insurant.getInsurantId());
+        if (!(o instanceof Beneficiary)) return false;
+        Beneficiary beneficiary = (Beneficiary) o;
+        return Objects.equals(getBeneficiaryId(), beneficiary.getBeneficiaryId());
     }
 
     @Override
     public int hashCode() {
-        int result = insurantId .hashCode();
+        int result = beneficiaryId.hashCode();
         result = 31 * result + lastName.hashCode();
         result = 31 * result + firstName.hashCode();
         result = 31 * result + middleName.hashCode();

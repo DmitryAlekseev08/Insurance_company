@@ -1,4 +1,4 @@
-package com.insurant.model;
+package com.agent.model;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -6,16 +6,16 @@ import java.util.Objects;
 
 @Entity
 @Embeddable
-// Таблица "insurants"
-@Table(name = "insurants")
-public class Insurant {
+// Таблица "insurance_agents"
+@Table(name = "insurance_agents")
+public class Insurance_agent {
     // Поля класса(столбцы таблицы)
     @Id
-    @Column(name = "id", unique = true, nullable = false)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="insurants_seq")
-    @SequenceGenerator(name="insurants_seq", sequenceName="insurants_id_seq", allocationSize=10)
-    private BigInteger insurantId;
-    @Column(name = "last_name", unique = true, nullable = false)
+    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="insurance_agents_seq")
+    @SequenceGenerator(name="insurance_agents_seq", sequenceName="insurance_agents_id_seq", allocationSize=10)
+    private BigInteger agentId;
+    @Column(name = "last_name")
     private String lastName;
     @Column(name = "first_name")
     private String firstName;
@@ -25,12 +25,16 @@ public class Insurant {
     private String phone;
     @Column(name = "email")
     private String email;
+    @Column(name = "insurance_percent")
+    private Float percent;
 
     // Методы класса
-    public BigInteger getInsurantId() {
-        return insurantId;
+    public BigInteger getAgentId() {
+        return agentId;
     }
-    public void setInsurantId(BigInteger insurantId) { this.insurantId = insurantId; }
+    public void setAgentId(BigInteger agentId) {
+        this.agentId = agentId;
+    }
 
     public String getLastName() {
         return lastName;
@@ -59,27 +63,33 @@ public class Insurant {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
+    public Float getPercent() { return percent; }
+    public void setPercent(Float percent) { this.percent = percent; }
+
     // Конструктор класса
-    public Insurant(String LastName, String FirstName, String MiddleName, String Phone, String Email) {
-        this.lastName = LastName;
-        this.firstName = FirstName;
-        this.middleName = MiddleName;
-        this.phone = Phone;
-        this.email = Email;
+    public Insurance_agent(String lastName, String firstName, String middleName, String phone, String email, Float percent) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.phone = phone;
+        this.email = email;
+        this.percent = percent;
     }
-    public Insurant() {
+
+    public Insurance_agent() {
     }
 
     // Метод, возвращающий запись из таблицы
     @Override
     public String toString() {
-        return "Insurant{" +
-                "IdInsurant =" + insurantId +
+        return "Insurance agent{" +
+                "IdAgent =" + agentId +
                 ", LastName ='" + lastName + '\'' +
-                ", FirstName ='" + firstName + '\'' +
+                ", Firstname ='" + firstName + '\'' +
                 ", MiddleName ='" + middleName + '\'' +
                 ", Phone ='" + phone + '\'' +
                 ", Email ='" + email + '\'' +
+                ", InsurancePercent ='" + percent + '\'' +
                 '}';
     }
 
@@ -87,19 +97,20 @@ public class Insurant {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Insurant)) return false;
-        Insurant insurant = (Insurant) o;
-        return Objects.equals(getInsurantId(), insurant.getInsurantId());
+        if (!(o instanceof Insurance_agent)) return false;
+        Insurance_agent agent = (Insurance_agent) o;
+        return Objects.equals(getAgentId(), agent.getAgentId());
     }
 
     @Override
     public int hashCode() {
-        int result = insurantId .hashCode();
+        int result = agentId.hashCode();
         result = 31 * result + lastName.hashCode();
         result = 31 * result + firstName.hashCode();
         result = 31 * result + middleName.hashCode();
         result = 31 * result + phone.hashCode();
         result = 31 * result + email.hashCode();
+        result = 31 * result + percent.hashCode();
         return result;
     }
 }
