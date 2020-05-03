@@ -8,150 +8,10 @@
 <html>
 <head>
     <title>Insurance policies</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style_members.css"/>">
     <style type="text/css">
-        body {
-            font-family: Droid Serif;
-            color: #123C69;
-            background-color:#EEE2DC;
-        }
-        h1{
-            color:#AC3B61;
-            padding: 0px 0px 0px 50px;
-            margin-bottom: 5px;
-            font-size: 40px;
-        }
         h2{
-            color:#BAB2B5;
-            padding: 0px 0px 0px 20px;
             max-width: 75%;
-            margin-top: 0px;
-            margin-bottom: 30px;
-            font-size: 20px;
-        }
-        footer {
-            background-color: #EDC7B7;
-            text-align: center;
-            font-size: 20px;
-            padding: 15px 0px 15px 0px;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            position: absolute;
-        }
-        .tg {
-            border-collapse: collapse;
-            border-spacing: 0;
-            border-color: #D6C8BA;
-        }
-
-        .tg td {
-            font-size: 16px;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 3px;
-            overflow: hidden;
-            word-break: normal;
-            background-color: #F7EBD7;
-        }
-
-        .tg th {
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 3px;
-            overflow: hidden;
-            word-break: normal;
-            background-color: #D6C8BA;
-        }
-
-        .tg .tg-4eph {
-            background-color: #D6C8BA;
-        }
-        form{
-            background-color:#D6C8BA;
-            border:3px solid #123C69;
-            border-radius:20px;
-            font-size:30px;
-            float:right;
-            width:300px;
-            max-height:1000px;
-            margin-right: 0px;
-            margin-top: 0px;
-        }
-        form table{
-            border-radius:5px;
-            width:300px;
-            height:50px;
-            font-size:16px;
-            font-weight: bold;
-            padding: 10px 20px;
-        }
-        form table td{
-            padding-top: 10px;
-        }
-        form legend{
-            font-size: 20px;
-            font-weight: bolder;
-            text-align: center;
-            padding-top: -20px;
-        }
-        input[type="submit"]
-        {
-            width:150px;
-            height:50px;
-            font-size:20px;
-            margin:auto;
-            display:block;
-            background-color: #EEE2DC;
-            font-family: Droid Serif;
-        }
-        input[type="submit"]:hover{
-            box-shadow: 0px 0px 10px white;
-        }
-        .colortext{
-            background-color: #F7EBD7;
-            color: #123C69;
-            border-radius:5px;
-            width:150px;
-            height:25px;
-        }
-        .main_page{
-            font-size: 24px;
-            display: block;
-            float: right;
-            color: #123C69;
-            background-color: #F7EBD7;
-            margin-top: -6%;
-            margin-right: 5%;
-            border: 2px solid #123C69;
-            border-bottom: 4px solid #123C69;
-            width: 150px;
-            height: 50px;
-            line-height: 45px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .main_page:hover{
-            background-color:#ffffff;
-            color: #123C69;
-            border-color: #123C69;
-            box-shadow: 0px 0px 30px #BAB2B5;
-        }
-        .update{
-            text-decoration: none;
-            color: #123C69;
-        }
-        .update:hover{
-            color: #AC3B61;
-        }
-        .tg a{
-            text-decoration: none;
-            color: #123C69;
-        }
-        .tg a:hover{
-            text-decoration: underline;
-            color:#EDC7B7;
         }
     </style>
 </head>
@@ -248,7 +108,11 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="agent" class = "colortext" required="true" type="number" min="1" max="1000000000" placeholder="1" autocomplete="off"/>
+                <form:select name="select_agent_id" path="agent" class = "colortext" required="true" autocomplete="off">
+                    <c:forEach items="${listAgentId}" var="agentId">
+                        <form:option value="${agentId}">${agentId}</form:option>
+                    </c:forEach>
+                </form:select>
             </td>
         </tr>
         <tr>
@@ -258,7 +122,11 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="insurant" class = "colortext" required="true" type="number" min="1" max="1000000000" placeholder="2" autocomplete="off"/>
+                <form:select name="select_insurant_id" path="insurant" class = "colortext" required="true" autocomplete="off">
+                    <c:forEach items="${listInsurantId}" var="insurantId">
+                        <form:option value="${insurantId}">${insurantId}</form:option>
+                    </c:forEach>
+                </form:select>
             </td>
         </tr>
         <tr>
@@ -268,7 +136,11 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="beneficiary" class = "colortext" required="true" type="number" min="1" max="1000000000" placeholder="3" autocomplete="off"/>
+                <form:select name="select_beneficiary_id" path="beneficiary" class = "colortext" required="true" autocomplete="off">
+                    <c:forEach items="${listBeneficiaryId}" var="beneficiaryId">
+                        <form:option value="${beneficiaryId}">${beneficiaryId}</form:option>
+                    </c:forEach>
+                </form:select>
             </td>
         </tr>
         <tr>
@@ -293,19 +165,19 @@
     <table class="tg">
         <tr>
             <th width="50">Policy ID</th>
-            <th width="120">Series and number</th>
-            <th width="150">Object insurance</th>
-            <th width="120">Insurance amount</th>
-            <th width="120">Insurance premium</th>
-            <th width="100">Date in</th>
-            <th width="100">Date out</th>
-            <th width="50">Id agent</th>
-            <th width="50">Id insurant</th>
-            <th width="50">Id beneficiary</th>
-            <th width="80">Edit</th>
-            <th width="80">Delete</th>
+            <th width="80">Series and number</th>
+            <th width="120">Object insurance</th>
+            <th width="80">Insurance amount</th>
+            <th width="80">Insurance premium</th>
+            <th width="80">Date in</th>
+            <th width="80">Date out</th>
+            <th width="70">Info agent<br>[id, name]</th>
+            <th width="70">Info insurant<br>[id, name]</th>
+            <th width="70">Info beneficiary<br>[id, name]</th>
+            <th width="50">Edit</th>
+            <th width="50">Delete</th>
         </tr>
-        <c:forEach items="${listPolicies}" var="policy">
+        <c:forEach items="${listPolicies}" var="policy" varStatus="ñounter">
             <tr>
                 <td align="center">${policy.policyId}</td>
                 <td>${policy.seriesNumber}</td>
@@ -314,15 +186,15 @@
                 <td>${policy.insurancePremium}</td>
                 <td>${policy.dateIn}</td>
                 <td>${policy.dateOut}</td>
-                <td>${policy.agent}</td>
-                <td>${policy.insurant}</td>
-                <td>${policy.beneficiary}</td>
+                <td>${agentInfo.get(ñounter.count - 1)}</td>
+                <td>${insurantInfo.get(ñounter.count - 1)}</td>
+                <td>${beneficiaryInfo.get(ñounter.count - 1)}</td>
                 <td align="center"><a href="<c:url value="/policies/edit/${policy.policyId}" />">Edit</a></td>
                 <td align="center"><a href="<c:url value="/policies/remove/${policy.policyId}" />">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
 </c:if>
-<footer>©Alekseev Dmitry 17-SBK</footer>
 </body>
+<footer>©Alekseev Dmitry 17-SBK</footer>
 </html>

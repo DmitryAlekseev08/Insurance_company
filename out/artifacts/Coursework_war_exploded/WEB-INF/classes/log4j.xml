@@ -16,6 +16,18 @@
     <logger name="com.insurant">
         <level value="info"/>
     </logger>
+    <logger name="com.beneficiary">
+        <level value="info"/>
+    </logger>
+    <logger name="com.agent">
+        <level value="info"/>
+    </logger>
+    <logger name="com.policy">
+        <level value="info"/>
+    </logger>
+    <logger name="com.payment">
+        <level value="info"/>
+    </logger>
 
     <!-- 3rdparty Loggers -->
     <logger name="org.springframework.core">
@@ -40,7 +52,7 @@
 
     <!-- Root Logger -->
     <root>
-        <priority value="warn"/>
+        <priority value="info"/>
         <appender-ref ref="console"/>
     </root>
 

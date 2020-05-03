@@ -26,6 +26,7 @@ public class AgentController {
         this.agentService = ps;
     }
 
+    // Получение списка страховых агентов
     @RequestMapping(value ={"/agents"}, method = RequestMethod.GET)
     public String listAgent(Model model) {
         model.addAttribute("agent", new Insurance_agent());
@@ -33,6 +34,7 @@ public class AgentController {
         return "/agents";
     }
 
+    // Добавление записи о новом страховом агенте
     @RequestMapping(value ="/agents/add", method = RequestMethod.POST)
     public String addAgent(@ModelAttribute("agent") Insurance_agent agent) {
         if(agent.getAgentId() == null) {
@@ -43,6 +45,7 @@ public class AgentController {
         return "redirect:/agents";
     }
 
+    // Обновление информации о страховом агенте
     @RequestMapping(value ="/agents/edit/{id}")
     public String editAgent(@PathVariable("id") BigInteger id, Model model) {
         model.addAttribute("agent", this.agentService.getAgentId(id));
@@ -50,6 +53,7 @@ public class AgentController {
         return "/agents";
     }
 
+    // Удаление сведений о страховом агенте
     @RequestMapping(value ="/agents/remove/{id}")
     public String removeAgent(@PathVariable("id") BigInteger id) {
         this.agentService.removeAgent(id);

@@ -15,10 +15,10 @@ import java.util.logging.Logger;
 public class InsurantDao {
     @Autowired
     private SessionFactory sessionFactory;
+
     public void setSessionFactory(SessionFactory sf) {
         this.sessionFactory = sf;
     }
-
     Logger logger = Logger.getLogger(String.valueOf(InsurantDao.class));
 
     @SuppressWarnings("unchecked")

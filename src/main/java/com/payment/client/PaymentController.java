@@ -2,11 +2,9 @@ package com.payment.client;
 
 import com.payment.model.Insurance_payment;
 import com.payment.service.PaymentService;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,26 +30,17 @@ public class PaymentController {
     public String listPayment(Model model) {
         model.addAttribute("payment", new Insurance_payment());
         model.addAttribute("listPayments", this.paymentService.listPayment());
+        model.addAttribute("listPolicyId", this.paymentService.listPolicyId());
         return "/payments";
     }
 
     @RequestMapping(value ="/payments/add", method = RequestMethod.POST)
     public String addPayment(@ModelAttribute("payment") Insurance_payment payment) {
-        try {
             if (payment.getPaymentId() == null) {
                 this.paymentService.addPayment(payment);
             } else {
                 this.paymentService.updatePayment(payment);
             }
-        }
-        catch(ConstraintViolationException ex)
-        {
-            return "/error";
-        }
-        catch(DataIntegrityViolationException ex)
-        {
-            return "/error";
-        }
         return "redirect:/payments";
     }
 
@@ -59,6 +48,7 @@ public class PaymentController {
     public String editPayment(@PathVariable("id") BigInteger id, Model model) {
         model.addAttribute("payment", this.paymentService.getPaymentId(id));
         model.addAttribute("listPayments", this.paymentService.listPayment());
+        model.addAttribute("listPolicyId", this.paymentService.listPolicyId());
         return "/payments";
     }
 

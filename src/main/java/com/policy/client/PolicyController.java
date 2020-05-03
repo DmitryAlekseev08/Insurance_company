@@ -2,11 +2,9 @@ package com.policy.client;
 
 import com.policy.model.Insuranсе_policy;
 import com.policy.service.PolicyService;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,26 +30,22 @@ public class PolicyController {
     public String listPolicy(Model model) {
         model.addAttribute("policy", new Insuranсе_policy());
         model.addAttribute("listPolicies", this.policyService.listPolicy());
+        model.addAttribute("agentInfo", this.policyService.AgentInformation());
+        model.addAttribute("insurantInfo", this.policyService.InsurantInformation());
+        model.addAttribute("beneficiaryInfo", this.policyService.BeneficiaryInformation());
+        model.addAttribute("listAgentId", this.policyService.listAgentId());
+        model.addAttribute("listInsurantId", this.policyService.listInsurantId());
+        model.addAttribute("listBeneficiaryId", this.policyService.listBeneficiaryId());
         return "/policies";
     }
 
     @RequestMapping(value ="/policies/add", method = RequestMethod.POST)
     public String addPolicy(@ModelAttribute("policy") Insuranсе_policy policy) {
-        try {
             if (policy.getPolicyId() == null) {
                 this.policyService.addPolicy(policy);
             } else {
                 this.policyService.updatePolicy(policy);
             }
-        }
-        catch(DataIntegrityViolationException ex)
-        {
-            return "/error";
-        }
-        catch(ConstraintViolationException ex)
-        {
-            return "/error";
-        }
         return "redirect:/policies";
     }
 
@@ -59,6 +53,12 @@ public class PolicyController {
     public String editPolicy(@PathVariable("id") BigInteger id, Model model) {
         model.addAttribute("policy", this.policyService.getPolicyId(id));
         model.addAttribute("listPolicies", this.policyService.listPolicy());
+        model.addAttribute("agentInfo", this.policyService.AgentInformation());
+        model.addAttribute("insurantInfo", this.policyService.InsurantInformation());
+        model.addAttribute("beneficiaryInfo", this.policyService.BeneficiaryInformation());
+        model.addAttribute("listAgentId", this.policyService.listAgentId());
+        model.addAttribute("listInsurantId", this.policyService.listInsurantId());
+        model.addAttribute("listBeneficiaryId", this.policyService.listBeneficiaryId());
         return "/policies";
     }
 

@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 public class PolicyDao {
     @Autowired
     private SessionFactory sessionFactory;
+
     public void setSessionFactory(SessionFactory sf) {
         this.sessionFactory = sf;
     }
@@ -56,6 +57,45 @@ public class PolicyDao {
         logger.info("Policy successfully loaded. Policy details: " + policy);
 
         return policy;
+    }
+
+    public List AgentInformation() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List agentInfo = session.createQuery("SELECT new list(pol.agent, age.lastName, age.firstName, age.middleName) " +
+                "FROM Insuranсе_policy pol, Insurance_agent age WHERE pol.agent = age.agentId").list();
+        return agentInfo;
+    }
+
+    public List InsurantInformation() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List insurantInfo = session.createQuery("SELECT new list(pol.insurant, ins.lastName, ins.firstName, ins.middleName) " +
+                "FROM Insuranсе_policy pol, Insurant ins WHERE pol.insurant = ins.insurantId").list();
+        return insurantInfo;
+    }
+
+    public List BeneficiaryInformation() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List beneficiaryInfo = session.createQuery("SELECT new list(pol.beneficiary, ben.lastName, ben.firstName, ben.middleName) " +
+                "FROM Insuranсе_policy pol, Beneficiary ben WHERE pol.beneficiary = ben.beneficiaryId").list();
+        return beneficiaryInfo;
+    }
+
+    public List<Integer> listAgentId() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Integer> agentIdList = session.createQuery("SELECT agentId FROM Insurance_agent").list();
+        return agentIdList;
+    }
+
+    public List<Integer> listInsurantId() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Integer> insurantIdList = session.createQuery("SELECT insurantId FROM Insurant").list();
+        return insurantIdList;
+    }
+
+    public List<Integer> listBeneficiaryId() {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Integer> beneficiaryIdList = session.createQuery("SELECT beneficiaryId FROM Beneficiary").list();
+        return beneficiaryIdList;
     }
 }
 

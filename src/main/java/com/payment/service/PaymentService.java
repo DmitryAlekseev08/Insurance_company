@@ -39,4 +39,7 @@ public class PaymentService {
 
     @Transactional
     public Insurance_payment getPaymentId(BigInteger id) { return this.paymentDAO.getPaymentId(id); }
+
+    @Transactional
+    public List<Integer> listPolicyId() { return this.paymentDAO.listPolicyId(); }
 }

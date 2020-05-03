@@ -1,0 +1,173 @@
+Using CATALINA_BASE:   "C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2"
+Using CATALINA_HOME:   "A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33"
+Using CATALINA_TMPDIR: "A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33\temp"
+Using JRE_HOME:        "C:\Program Files\Java\jdk1.8.0_241"
+Using CLASSPATH:       "A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33\bin\bootstrap.jar;A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33\bin\tomcat-juli.jar"
+03-May-2020 15:06:14.462 WARNING [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [A:\3 √™√≥√∞√±\√Ç√≤√Æ√∞√Æ√© √±√•√¨√•√±√≤√∞\√ì√Ø√∞√†√¢√´√•√≠√®√• √§√†√≠√≠√ª√¨√®\√ã√†√°√Æ√∞√†√≤√Æ√∞√≠√†√ø √∞√†√°√Æ√≤√† ¬π3\apache-tomcat-9.0.33\lib], exists: [false], isDirectory: [false], canRead: [false]
+03-May-2020 15:06:14.476 WARNING [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [A:\3 √™√≥√∞√±\√Ç√≤√Æ√∞√Æ√© √±√•√¨√•√±√≤√∞\√ì√Ø√∞√†√¢√´√•√≠√®√• √§√†√≠√≠√ª√¨√®\√ã√†√°√Æ√∞√†√≤√Æ√∞√≠√†√ø √∞√†√°√Æ√≤√† ¬π3\apache-tomcat-9.0.33\lib], exists: [false], isDirectory: [false], canRead: [false]
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.33
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 11 2020 09:31:38 UTC
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.33.0
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_241\jre
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_241-b07
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         A:\3 –∫—É—Ä—Å\–í—Ç–æ—Ä–æ–π —Å–µ–º–µ—Å—Ç—Ä\–£–ø—Ä–∞–≤–ª–µ–Ω–∏–µ –¥–∞–Ω–Ω—ã–º–∏\–õ–∞–±–æ—Ä–∞—Ç–æ—Ä–Ω–∞—è —Ä–∞–±–æ—Ç–∞ ‚Ññ3\apache-tomcat-9.0.33
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2\conf\logging.properties
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcom.sun.management.jmxremote=
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcom.sun.management.jmxremote.port=1099
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcom.sun.management.jmxremote.password.file=C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2\jmxremote.password
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcom.sun.management.jmxremote.access.file=C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2\jmxremote.access
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.rmi.server.hostname=127.0.0.1
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+03-May-2020 15:06:15.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=A:\3 –∫—É—Ä—Å\–í—Ç–æ—Ä–æ–π —Å–µ–º–µ—Å—Ç—Ä\–£–ø—Ä–∞–≤–ª–µ–Ω–∏–µ –¥–∞–Ω–Ω—ã–º–∏\–õ–∞–±–æ—Ä–∞—Ç–æ—Ä–Ω–∞—è —Ä–∞–±–æ—Ç–∞ ‚Ññ3\apache-tomcat-9.0.33
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=A:\3 –∫—É—Ä—Å\–í—Ç–æ—Ä–æ–π —Å–µ–º–µ—Å—Ç—Ä\–£–ø—Ä–∞–≤–ª–µ–Ω–∏–µ –¥–∞–Ω–Ω—ã–º–∏\–õ–∞–±–æ—Ä–∞—Ç–æ—Ä–Ω–∞—è —Ä–∞–±–æ—Ç–∞ ‚Ññ3\apache-tomcat-9.0.33\temp
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+03-May-2020 15:06:15.144 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+03-May-2020 15:06:15.682 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+03-May-2020 15:06:15.752 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1¬†093] milliseconds
+03-May-2020 15:06:15.811 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+03-May-2020 15:06:15.811 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.33]
+03-May-2020 15:06:15.837 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+03-May-2020 15:06:15.858 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [104] milliseconds
+Connected to server
+03-May-2020 15:06:19.636 INFO [RMI TCP Connection(3)-127.0.0.1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+log4j:ERROR Could not parse url [file:/A:/3%20ÍÛÒ/¬ÚÓÓÈ%20ÒÂÏÂÒÚ/”Ô‡‚ÎÂÌËÂ%20‰‡ÌÌ˚ÏË/À‡·Ó‡ÚÓÌ‡ˇ%20‡·ÓÚ‡%20π3/ ÛÒÓ‚‡ˇ%20‡·ÓÚ‡/out/artifacts/Coursework_war_exploded/WEB-INF/classes/log4j.xml].
+com.sun.org.apache.xerces.internal.util.URI$MalformedURIException: Path contains invalid character: Í
+	at com.sun.org.apache.xerces.internal.util.URI.initializePath(URI.java:1109)
+	at com.sun.org.apache.xerces.internal.util.URI.initialize(URI.java:582)
+	at com.sun.org.apache.xerces.internal.util.URI.<init>(URI.java:335)
+	at com.sun.org.apache.xerces.internal.util.URI.<init>(URI.java:298)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.expandSystemIdStrictOff1(XMLEntityManager.java:2221)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.expandSystemId(XMLEntityManager.java:2053)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.resolveEntityAsPerStax(XMLEntityManager.java:968)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.dispatch(XMLDocumentScannerImpl.java:1151)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.next(XMLDocumentScannerImpl.java:1045)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:959)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.apache.log4j.xml.DOMConfigurator$2.parse(DOMConfigurator.java:769)
+	at org.apache.log4j.xml.DOMConfigurator.doConfigure(DOMConfigurator.java:871)
+	at org.apache.log4j.xml.DOMConfigurator.doConfigure(DOMConfigurator.java:778)
+	at org.apache.log4j.helpers.OptionConverter.selectAndConfigure(OptionConverter.java:526)
+	at org.apache.log4j.LogManager.<clinit>(LogManager.java:127)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.jboss.logging.LoggerProviders.tryLog4j(LoggerProviders.java:95)
+	at org.jboss.logging.LoggerProviders.findProvider(LoggerProviders.java:72)
+	at org.jboss.logging.LoggerProviders.find(LoggerProviders.java:35)
+	at org.jboss.logging.LoggerProviders.<clinit>(LoggerProviders.java:32)
+	at org.jboss.logging.Logger.getLogger(Logger.java:2163)
+	at org.jboss.logging.Logger.getMessageLogger(Logger.java:2259)
+	at org.jboss.logging.Logger.getMessageLogger(Logger.java:2214)
+	at org.hibernate.cfg.Configuration.<clinit>(Configuration.java:184)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:324)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:684)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1134)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1089)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:983)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4876)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5185)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1728)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:456)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:405)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1408)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:573)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:834)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:687)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+log4j:WARN No appenders could be found for logger (org.jboss.logging).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+03-May-2020 15:06:25.847 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDirectory –£—Å—Ç–∞–Ω–æ–≤–∫–∞ –≤–µ–± –ø—Ä–∏–ª–æ–∂–µ–Ω–∏—è –≤ –ø–∞–ø–∫—É [A:\3 –∫—É—Ä—Å\–í—Ç–æ—Ä–æ–π —Å–µ–º–µ—Å—Ç—Ä\–£–ø—Ä–∞–≤–ª–µ–Ω–∏–µ –¥–∞–Ω–Ω—ã–º–∏\–õ–∞–±–æ—Ä–∞—Ç–æ—Ä–Ω–∞—è —Ä–∞–±–æ—Ç–∞ ‚Ññ3\apache-tomcat-9.0.33\webapps\manager]
+03-May-2020 15:06:25.961 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [A:\3 –∫—É—Ä—Å\–í—Ç–æ—Ä–æ–π —Å–µ–º–µ—Å—Ç—Ä\–£–ø—Ä–∞–≤–ª–µ–Ω–∏–µ –¥–∞–Ω–Ω—ã–º–∏\–õ–∞–±–æ—Ä–∞—Ç–æ—Ä–Ω–∞—è —Ä–∞–±–æ—Ç–∞ ‚Ññ3\apache-tomcat-9.0.33\webapps\manager] has finished in [113] ms
+Hibernate: select insurance_0_.id as id1_1_, insurance_0_.email as email2_1_, insurance_0_.first_name as first_na3_1_, insurance_0_.last_name as last_nam4_1_, insurance_0_.middle_name as middle_n5_1_, insurance_0_.insurance_percent as insuranc6_1_, insurance_0_.phone as phone7_1_ from insurance_agents insurance_0_
+03-May-2020 15:12:52.087 INFO [http-nio-8080-exec-8] com.agent.dao.AgentDao.listAgent Insurance agent{IdAgent =140, LastName ='Resin', Firstname ='Vladimir', MiddleName ='Iosifovich', Phone ='+7 (912) 051-42-79', Email ='resinVI@yandex.ru', InsurancePercent ='0.28'}
+03-May-2020 15:12:52.087 INFO [http-nio-8080-exec-8] com.agent.dao.AgentDao.listAgent Insurance agent{IdAgent =141, LastName ='Skvortsova', Firstname ='Veronika', MiddleName ='Igorevna', Phone ='+7 (977) 986-10-07', Email ='SkvortsovaVI@gmail.com', InsurancePercent ='0.25'}
+03-May-2020 15:12:52.087 INFO [http-nio-8080-exec-8] com.agent.dao.AgentDao.listAgent Insurance agent{IdAgent =1, LastName ='Romashov', Firstname ='Evgeniy', MiddleName ='Dmitrievich', Phone ='+7 (909) 454-51-60', Email ='romashka5@yandex.ru', InsurancePercent ='0.26'}
+Using CATALINA_BASE:   "C:\Users\adale\.IntelliJIdea2019.3\system\tomcat\Tomcat_9_0_33_Coursework_2"
+Using CATALINA_HOME:   "A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33"
+Using CATALINA_TMPDIR: "A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33\temp"
+Using JRE_HOME:        "C:\Program Files\Java\jdk1.8.0_241"
+Using CLASSPATH:       "A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33\bin\bootstrap.jar;A:\3 ™„‡·\Ç‚Æ‡Æ© ·•¨•·‚‡\ìØ‡†¢´•≠®• §†≠≠Î¨®\ã†°Æ‡†‚Æ‡≠†Ô ‡†°Æ‚† ¸3\apache-tomcat-9.0.33\bin\tomcat-juli.jar"
+03-May-2020 15:13:00.682 WARNING [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [A:\3 √™√≥√∞√±\√Ç√≤√Æ√∞√Æ√© √±√•√¨√•√±√≤√∞\√ì√Ø√∞√†√¢√´√•√≠√®√• √§√†√≠√≠√ª√¨√®\√ã√†√°√Æ√∞√†√≤√Æ√∞√≠√†√ø √∞√†√°√Æ√≤√† ¬π3\apache-tomcat-9.0.33\lib], exists: [false], isDirectory: [false], canRead: [false]
+03-May-2020 15:13:00.688 WARNING [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [A:\3 √™√≥√∞√±\√Ç√≤√Æ√∞√Æ√© √±√•√¨√•√±√≤√∞\√ì√Ø√∞√†√¢√´√•√≠√®√• √§√†√≠√≠√ª√¨√®\√ã√†√°√Æ√∞√†√≤√Æ√∞√≠√†√ø √∞√†√°√Æ√≤√† ¬π3\apache-tomcat-9.0.33\lib], exists: [false], isDirectory: [false], canRead: [false]
+03-May-2020 15:13:01.071 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+03-May-2020 15:13:01.072 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+03-May-2020 15:13:01.560 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+03-May-2020 15:13:01.628 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+03-May-2020 15:13:01.655 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+03-May-2020 15:13:01.659 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+Disconnected from server

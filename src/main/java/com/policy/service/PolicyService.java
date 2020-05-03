@@ -20,7 +20,7 @@ public class PolicyService {
     }
 
     @Transactional
-    public List<Insuranсе_policy> listPolicy() { return this.policyDAO.listPolicy(); }
+    public List listPolicy() { return this.policyDAO.listPolicy(); }
 
     @Transactional
     public void addPolicy(Insuranсе_policy policy) {
@@ -41,4 +41,23 @@ public class PolicyService {
     public Insuranсе_policy getPolicyId(BigInteger id) {
         return this.policyDAO.getPolicyId(id);
     }
+
+    @Transactional
+    public List AgentInformation() { return this.policyDAO.AgentInformation(); }
+
+    @Transactional
+    public List InsurantInformation() { return this.policyDAO.InsurantInformation(); }
+
+    @Transactional
+    public List BeneficiaryInformation() { return this.policyDAO.BeneficiaryInformation(); }
+
+    @Transactional
+    public List<Integer> listAgentId() { return this.policyDAO.listAgentId(); }
+
+    @Transactional
+    public List<Integer> listInsurantId() { return this.policyDAO.listInsurantId(); }
+
+    @Transactional
+    public List<Integer> listBeneficiaryId() { return this.policyDAO.listBeneficiaryId(); }
+
 }

@@ -51,10 +51,16 @@ public class PaymentDao {
     }
 
     public Insurance_payment getPaymentId(BigInteger id) {
-        Session session =this.sessionFactory.getCurrentSession();
+        Session session = this.sessionFactory.getCurrentSession();
         Insurance_payment payment = (Insurance_payment) session.load(Insurance_payment.class, new BigInteger(String.valueOf(id)));
         logger.info("Insurance payment successfully loaded. Insurance payment details: " + payment);
 
         return payment;
     }
+
+        public List<Integer> listPolicyId() {
+            Session session = this.sessionFactory.getCurrentSession();
+            List<Integer> policyIdList = session.createQuery("SELECT pol.policyId FROM Insuranсе_policy pol WHERE pol.policyId not in (SELECT pay.policy FROM Insurance_payment pay)").list();
+            return policyIdList;
+        }
 }
