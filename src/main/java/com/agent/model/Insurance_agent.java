@@ -23,10 +23,13 @@ public class Insurance_agent {
     private String middleName;
     @Column(name = "phone")
     private String phone;
-    @Column(name = "email")
-    private String email;
     @Column(name = "insurance_percent")
     private Float percent;
+    @Column(name = "email")
+    private String email;
+
+    /*@OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Insuranсе_policy> policies;*/
 
     // Методы класса
     public BigInteger getAgentId() {
@@ -66,6 +69,23 @@ public class Insurance_agent {
     public Float getPercent() { return percent; }
     public void setPercent(Float percent) { this.percent = percent; }
 
+    /*public void addPolicy(Insuranсе_policy policy) {
+        policy.setAgent(this);
+        policies.add(policy);
+    }
+
+    public void removePolicy(Insuranсе_policy policy) {
+        policies.remove(policy);
+    }
+
+    public List<Insuranсе_policy> getPolicies() {
+        return policies;
+    }
+
+    public void setPolicies(List<Insuranсе_policy> policies) {
+        this.policies = policies;
+    }*/
+
     // Конструктор класса
     public Insurance_agent(String lastName, String firstName, String middleName, String phone, String email, Float percent) {
         this.lastName = lastName;
@@ -74,6 +94,7 @@ public class Insurance_agent {
         this.phone = phone;
         this.email = email;
         this.percent = percent;
+        //this.policies = new ArrayList<>();
     }
 
     public Insurance_agent() {

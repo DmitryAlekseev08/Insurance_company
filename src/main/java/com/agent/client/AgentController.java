@@ -29,8 +29,13 @@ public class AgentController {
     // Получение списка страховых агентов
     @RequestMapping(value ={"/agents"}, method = RequestMethod.GET)
     public String listAgent(Model model) {
-        model.addAttribute("agent", new Insurance_agent());
-        model.addAttribute("listAgents", this.agentService.listAgent());
+        try {
+            model.addAttribute("agent", new Insurance_agent());
+            model.addAttribute("listAgents", this.agentService.listAgent());
+        }
+        catch (Exception error){
+            return "/error";
+        }
         return "/agents";
     }
 

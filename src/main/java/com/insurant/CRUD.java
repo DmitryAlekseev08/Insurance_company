@@ -1,6 +1,9 @@
 package com.insurant;
 
+import com.agent.model.Insurance_agent;
+import com.beneficiary.model.Beneficiary;
 import com.insurant.model.Insurant;
+import com.policy.model.Insuranсе_policy;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -15,9 +18,11 @@ public class CRUD {
     public void crud() {
         SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
-        read(session);
-        create(session);
-        read(session);
+        List<Insurant> list = read1(session);
+        List<Insurance_agent> listAgent = read2(session);
+        List<Beneficiary> listBen = read3(session);
+        create(session, list, listAgent, listBen);
+        //read(session);
         /*readID(session, BigInteger.valueOf(2));
         update(session, BigInteger.valueOf(1), "Носик", "Владимир", "Алексеевич", "+7 (908) 876-91-82", "NosikVA@yandex.ru");
         read(session);
@@ -27,27 +32,37 @@ public class CRUD {
     }
 
     // Метод чтения записей из таблицы
-    private void read(Session session) {
+    private List<Insurant> read1(Session session) {
         List<Insurant> insurantList = session.createQuery("SELECT s FROM Insurant s").list();
-        System.out.println("");
-        for (Insurant s : insurantList) {
-            System.out.println("List:" + s);
-        }
-        System.out.println("");
+        return insurantList;
+    }
+
+    private List<Insurance_agent> read2(Session session) {
+        List<Insurance_agent> agentList = session.createQuery("SELECT s FROM Insurance_agent s").list();
+        return agentList;
+    }
+    private List<Beneficiary> read3(Session session) {
+        List<Beneficiary> benList = session.createQuery("SELECT s FROM Beneficiary s").list();
+        return benList;
     }
 
     // Метод создания новой записи в таблице
-    private void create(Session session) {
-        Insurant insurant = new Insurant();
-        insurant.setLastName("Усманов");
-        insurant.setFirstName("Олег");
-        insurant.setMiddleName("Владимирович");
-        insurant.setPhone("+7 (910) 108-46-67");
-        insurant.setEmail("UsmanovOV@yandex.ru");
-        System.out.println("Create:" + insurant);
+    private void create(Session session, List<Insurant> list, List<Insurance_agent> list2,List<Beneficiary> list3) {
+        Insuranсе_policy policy = new Insuranсе_policy();
+        policy.setSeriesNumber("1234567810");
+        policy.setObjectInsurance("Flat");
+        policy.setInsuranceAmount(10000);
+        policy.setInsurancePremium(1000);
+        policy.setDateIn("2011-11-11");
+        policy.setDateOut("2012-11-11");
+        policy.setAgent(list2.get(1));
+        policy.setInsurant(list.get(1));
+        policy.setBeneficiary(list3.get(1));
+        //list.get(1).setPolicies((List<Insuranсе_policy>) policy);
+        System.out.println("Create:" + policy);
         System.out.println("");
         session.beginTransaction();
-        session.save(insurant);
+        session.save(policy);
         session.getTransaction().commit();
     }
 

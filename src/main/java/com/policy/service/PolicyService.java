@@ -1,5 +1,8 @@
 package com.policy.service;
 
+import com.agent.model.Insurance_agent;
+import com.beneficiary.model.Beneficiary;
+import com.insurant.model.Insurant;
 import com.policy.dao.PolicyDao;
 import com.policy.model.Insuranсе_policy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,21 +46,14 @@ public class PolicyService {
     }
 
     @Transactional
-    public List AgentInformation() { return this.policyDAO.AgentInformation(); }
-
-    @Transactional
-    public List InsurantInformation() { return this.policyDAO.InsurantInformation(); }
-
-    @Transactional
     public List BeneficiaryInformation() { return this.policyDAO.BeneficiaryInformation(); }
 
     @Transactional
-    public List<Integer> listAgentId() { return this.policyDAO.listAgentId(); }
+    public List<Insurance_agent> listAgent() { return this.policyDAO.listAgent(); }
 
     @Transactional
-    public List<Integer> listInsurantId() { return this.policyDAO.listInsurantId(); }
+    public List<Insurant> listInsurant() { return this.policyDAO.listInsurant(); }
 
     @Transactional
-    public List<Integer> listBeneficiaryId() { return this.policyDAO.listBeneficiaryId(); }
-
+    public List<Beneficiary> listBeneficiary() { return this.policyDAO.listBeneficiary(); }
 }

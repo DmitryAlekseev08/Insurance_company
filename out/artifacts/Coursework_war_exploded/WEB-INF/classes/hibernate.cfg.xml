@@ -19,6 +19,9 @@
 
         <!-- Annotated entity classes -->
         <mapping class="com.insurant.model.Insurant"/>
+        <mapping class="com.policy.model.Insuranсе_policy"/>
+        <mapping class="com.agent.model.Insurance_agent"/>
+        <mapping class="com.beneficiary.model.Beneficiary"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -24,6 +24,14 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/view/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/view/error.jsp</location>
+    </error-page>
 
     <welcome-file-list>
         <welcome-file>/WEB-INF/view/main_page.jsp</welcome-file>

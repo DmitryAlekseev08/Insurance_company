@@ -1,5 +1,8 @@
 package com.policy.dao;
 
+import com.agent.model.Insurance_agent;
+import com.beneficiary.model.Beneficiary;
+import com.insurant.model.Insurant;
 import com.policy.model.Insuranсе_policy;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -59,43 +62,29 @@ public class PolicyDao {
         return policy;
     }
 
-    public List AgentInformation() {
-        Session session = this.sessionFactory.getCurrentSession();
-        List agentInfo = session.createQuery("SELECT new list(pol.agent, age.lastName, age.firstName, age.middleName) " +
-                "FROM Insuranсе_policy pol, Insurance_agent age WHERE pol.agent = age.agentId").list();
-        return agentInfo;
-    }
-
-    public List InsurantInformation() {
-        Session session = this.sessionFactory.getCurrentSession();
-        List insurantInfo = session.createQuery("SELECT new list(pol.insurant, ins.lastName, ins.firstName, ins.middleName) " +
-                "FROM Insuranсе_policy pol, Insurant ins WHERE pol.insurant = ins.insurantId").list();
-        return insurantInfo;
-    }
-
     public List BeneficiaryInformation() {
         Session session = this.sessionFactory.getCurrentSession();
-        List beneficiaryInfo = session.createQuery("SELECT new list(pol.beneficiary, ben.lastName, ben.firstName, ben.middleName) " +
-                "FROM Insuranсе_policy pol, Beneficiary ben WHERE pol.beneficiary = ben.beneficiaryId").list();
+        List beneficiaryInfo = session.createQuery("SELECT new list(pol.beneficiary.beneficiaryId, ben.lastName, ben.firstName, ben.middleName) " +
+                "FROM Insuranсе_policy pol, Beneficiary ben WHERE pol.beneficiary.beneficiaryId = ben.beneficiaryId").list();
         return beneficiaryInfo;
     }
 
-    public List<Integer> listAgentId() {
+    public List<Insurance_agent> listAgent() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Integer> agentIdList = session.createQuery("SELECT agentId FROM Insurance_agent").list();
-        return agentIdList;
+        List<Insurance_agent> agentList = session.createQuery("SELECT agent FROM Insurance_agent agent").list();
+        return agentList;
     }
 
-    public List<Integer> listInsurantId() {
+    public List<Insurant> listInsurant() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Integer> insurantIdList = session.createQuery("SELECT insurantId FROM Insurant").list();
-        return insurantIdList;
+        List<Insurant> insurantList = session.createQuery("SELECT insurant FROM Insurant insurant").list();
+        return insurantList;
     }
 
-    public List<Integer> listBeneficiaryId() {
+    public List<Beneficiary> listBeneficiary() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Integer> beneficiaryIdList = session.createQuery("SELECT beneficiaryId FROM Beneficiary").list();
-        return beneficiaryIdList;
+        List<Beneficiary> beneficiaryList = session.createQuery("SELECT beneficiary FROM Beneficiary beneficiary").list();
+        return beneficiaryList;
     }
 }
 

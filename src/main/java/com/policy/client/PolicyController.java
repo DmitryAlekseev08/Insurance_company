@@ -30,12 +30,10 @@ public class PolicyController {
     public String listPolicy(Model model) {
         model.addAttribute("policy", new Insuranсе_policy());
         model.addAttribute("listPolicies", this.policyService.listPolicy());
-        model.addAttribute("agentInfo", this.policyService.AgentInformation());
-        model.addAttribute("insurantInfo", this.policyService.InsurantInformation());
         model.addAttribute("beneficiaryInfo", this.policyService.BeneficiaryInformation());
-        model.addAttribute("listAgentId", this.policyService.listAgentId());
-        model.addAttribute("listInsurantId", this.policyService.listInsurantId());
-        model.addAttribute("listBeneficiaryId", this.policyService.listBeneficiaryId());
+        model.addAttribute("listAgent", this.policyService.listAgent());
+        model.addAttribute("listInsurant", this.policyService.listInsurant());
+        model.addAttribute("listBeneficiary", this.policyService.listBeneficiary());
         return "/policies";
     }
 
@@ -49,16 +47,14 @@ public class PolicyController {
         return "redirect:/policies";
     }
 
-    @RequestMapping(value ="/policies/edit/{id}")
+    @RequestMapping(value ="/policies/edit/{id}/")
     public String editPolicy(@PathVariable("id") BigInteger id, Model model) {
         model.addAttribute("policy", this.policyService.getPolicyId(id));
         model.addAttribute("listPolicies", this.policyService.listPolicy());
-        model.addAttribute("agentInfo", this.policyService.AgentInformation());
-        model.addAttribute("insurantInfo", this.policyService.InsurantInformation());
         model.addAttribute("beneficiaryInfo", this.policyService.BeneficiaryInformation());
-        model.addAttribute("listAgentId", this.policyService.listAgentId());
-        model.addAttribute("listInsurantId", this.policyService.listInsurantId());
-        model.addAttribute("listBeneficiaryId", this.policyService.listBeneficiaryId());
+        model.addAttribute("listAgent", this.policyService.listAgent());
+        model.addAttribute("listInsurant", this.policyService.listInsurant());
+        model.addAttribute("listBeneficiary", this.policyService.listBeneficiary());
         return "/policies";
     }
 

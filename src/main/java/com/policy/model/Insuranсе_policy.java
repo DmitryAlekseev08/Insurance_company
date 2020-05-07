@@ -1,5 +1,9 @@
 package com.policy.model;
 
+import com.agent.model.Insurance_agent;
+import com.beneficiary.model.Beneficiary;
+import com.insurant.model.Insurant;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
@@ -27,12 +31,18 @@ public class Insuranсе_policy {
     private String dateIn;
     @Column(name = "date_out")
     private String dateOut;
-    @Column(name = "id_agent")
-    private Integer agent;
-    @Column(name = "id_insurant")
-    private Integer insurant;
-    @Column(name = "id_beneficiary")
-    private Integer beneficiary;
+
+    @ManyToOne
+    @JoinColumn(name = "id_agent")
+    private Insurance_agent agent;
+
+    @ManyToOne
+    @JoinColumn(name = "id_insurant")
+    private Insurant insurant;
+
+    @ManyToOne
+    @JoinColumn(name = "id_beneficiary")
+    private Beneficiary beneficiary;
 
     // Методы класса
     public BigInteger getPolicyId() {
@@ -74,17 +84,17 @@ public class Insuranсе_policy {
     public String getDateOut() { return dateOut; }
     public void setDateOut(String dateOut) { this.dateOut = dateOut; }
 
-    public Integer getAgent() { return agent; }
-    public void setAgent(Integer agent) { this.agent = agent; }
+    public Insurance_agent getAgent() { return agent; }
+    public void setAgent(Insurance_agent agent) { this.agent = agent; }
 
-    public Integer getInsurant() { return insurant; }
-    public void setInsurant(Integer insurant) { this.insurant = insurant; }
+    public Insurant getInsurant() { return insurant; }
+    public void setInsurant(Insurant insurant) { this.insurant = insurant; }
 
-    public Integer getBeneficiary() { return beneficiary; }
-    public void setBeneficiary(Integer beneficiary) { this.beneficiary = beneficiary; }
+    public Beneficiary getBeneficiary() { return beneficiary; }
+    public void setBeneficiary(Beneficiary beneficiary) { this.beneficiary = beneficiary; }
 
     // Конструктор класса
-    public Insuranсе_policy(String seriesNumber, String objectInsurance, Integer insuranceAmount, Integer insurancePremium, String dateIn, String dateOut, Integer agent, Integer insurant, Integer beneficiary) {
+    public Insuranсе_policy(String seriesNumber, String objectInsurance, Integer insuranceAmount, Integer insurancePremium, String dateIn, String dateOut, Insurance_agent agent, Insurant insurant, Beneficiary beneficiary) {
         this.seriesNumber = seriesNumber;
         this.objectInsurance = objectInsurance;
         this.insuranceAmount = insuranceAmount;

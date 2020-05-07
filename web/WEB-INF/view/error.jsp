@@ -12,7 +12,7 @@
 </head>
 <body>
  <h1>Error</h1>
- <h2>The id you entered does not exist.</h2>
+ <h2>This page does not exist or you entered a non-unique value for the field(s).</h2>
  <a class="main_page" onclick="history.back()">Back</a>
 </body>
 <footer>©Alekseev Dmitry 17-SBK</footer>

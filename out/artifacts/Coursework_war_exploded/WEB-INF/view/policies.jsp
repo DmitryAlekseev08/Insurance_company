@@ -1,3 +1,4 @@
+<%@ page import="com.insurant.model.Insurant" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -103,42 +104,42 @@
         </tr>
         <tr>
             <td>
-                <form:label path="agent">
-                    <spring:message text="Id agent"/>
+                <form:label path="agent.agentId">
+                    <spring:message text="Agent"/>
                 </form:label>
             </td>
             <td>
-                <form:select name="select_agent_id" path="agent" class = "colortext" required="true" autocomplete="off">
-                    <c:forEach items="${listAgentId}" var="agentId">
-                        <form:option value="${agentId}">${agentId}</form:option>
+                <form:select path="agent.agentId" class = "colortext" required="true" autocomplete="off">
+                    <c:forEach items="${listAgent}" var="agent">
+                        <form:option value="${agent.agentId}">${agent.lastName} ${agent.firstName} ${agent.middleName}</form:option>
                     </c:forEach>
                 </form:select>
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="insurant">
-                    <spring:message text="Id insurant"/>
+                <form:label path="insurant.insurantId">
+                    <spring:message text="Insurant"/>
                 </form:label>
             </td>
             <td>
-                <form:select name="select_insurant_id" path="insurant" class = "colortext" required="true" autocomplete="off">
-                    <c:forEach items="${listInsurantId}" var="insurantId">
-                        <form:option value="${insurantId}">${insurantId}</form:option>
+                <form:select path="insurant.insurantId" class = "colortext" required="true" autocomplete="off">
+                    <c:forEach items="${listInsurant}" var="insurant">
+                        <form:option value="${insurant.insurantId}">${insurant.lastName} ${insurant.firstName} ${insurant.middleName}</form:option>
                     </c:forEach>
                 </form:select>
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="beneficiary">
-                    <spring:message text="Id beneficiary"/>
+                <form:label path="beneficiary.beneficiaryId">
+                    <spring:message text="Beneficiary"/>
                 </form:label>
             </td>
             <td>
-                <form:select name="select_beneficiary_id" path="beneficiary" class = "colortext" required="true" autocomplete="off">
-                    <c:forEach items="${listBeneficiaryId}" var="beneficiaryId">
-                        <form:option value="${beneficiaryId}">${beneficiaryId}</form:option>
+                <form:select path="beneficiary.beneficiaryId" class = "colortext" required="true" autocomplete="off">
+                    <c:forEach items="${listBeneficiary}" var="beneficiary">
+                        <form:option value="${beneficiary.beneficiaryId}">${beneficiary.lastName} ${beneficiary.firstName} ${beneficiary.middleName}</form:option>
                     </c:forEach>
                 </form:select>
             </td>
@@ -171,8 +172,8 @@
             <th width="80">Insurance premium</th>
             <th width="80">Date in</th>
             <th width="80">Date out</th>
-            <th width="70">Info agent<br>[id, name]</th>
-            <th width="70">Info insurant<br>[id, name]</th>
+            <th width="70">Info agent</th>
+            <th width="70">Info insurant</th>
             <th width="70">Info beneficiary<br>[id, name]</th>
             <th width="50">Edit</th>
             <th width="50">Delete</th>
@@ -186,11 +187,11 @@
                 <td>${policy.insurancePremium}</td>
                 <td>${policy.dateIn}</td>
                 <td>${policy.dateOut}</td>
-                <td>${agentInfo.get(ñounter.count - 1)}</td>
-                <td>${insurantInfo.get(ñounter.count - 1)}</td>
-                <td>${beneficiaryInfo.get(ñounter.count - 1)}</td>
-                <td align="center"><a href="<c:url value="/policies/edit/${policy.policyId}" />">Edit</a></td>
-                <td align="center"><a href="<c:url value="/policies/remove/${policy.policyId}" />">Delete</a></td>
+                <td>id: ${policy.agent.agentId}<br>${policy.agent.lastName}<br>${policy.agent.firstName}<br>${policy.agent.middleName}</td>
+                <td>id: ${policy.insurant.insurantId}<br>${policy.insurant.lastName}<br>${policy.insurant.firstName}<br>${policy.insurant.middleName}</td>
+                <td>id: ${policy.beneficiary.beneficiaryId}<br>${policy.beneficiary.lastName}<br>${policy.beneficiary.firstName}<br>${policy.beneficiary.middleName}</td>
+                <td align="center"><a href="<c:url value="/policies/edit/${policy.policyId}/" />">Edit</a></td>
+                <td align="center"><a href="<c:url value= "/policies/remove/${policy.policyId}" />">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
